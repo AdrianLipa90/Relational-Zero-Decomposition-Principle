@@ -1,0 +1,134 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{hyperref}
+
+\title{\textbf{A Relational-Zero Decomposition of the Clay Millennium Problems}\\
+\large Location, Multiplicity, Spectral Gap, Algebraic Realization, Dynamical Avoidance, and Computational Separation}
+\author{Adrian Lipa}
+\date{24 September 2026}
+
+\newtheorem{principle}{Principle}
+\newtheorem{theorem}{Theorem}
+\newtheorem{definition}{Definition}
+\newtheorem{remark}{Remark}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We introduce the Relational-Zero Decomposition Principle (RZDP), a structural classification mapping distinct Millennium-problem obligations to different mathematical properties of a distinguished relational zero. The construction does not identify the problems as equivalent. Instead, it separates location, multiplicity, spectral isolation, algebraic realization, dynamical avoidance, and computational separation into typed proof obligations. The Riemann Hypothesis provides the first worked case, conditional on the Universal Relational-Zero Axiom A0. All other branches retain explicit theorem-status firewalls.
+\end{abstract}
+
+\section{Relational-Zero Principle}
+
+Let a structure admit a canonical relation \(R\) and a non-negative faithful defect
+\[
+D_R\ge 0,\qquad D_R=0\Longleftrightarrow Z_R.
+\]
+
+\begin{principle}[Universal Relational-Zero Axiom A0]
+A zero of an admitted observable is realized only as vanishing relational distinction in its defining canonical relation.
+\end{principle}
+
+The role of A0 is explicit. A theorem derived from it remains conditional on A0 unless A0 is independently established in the ambient standard theory.
+
+\section{Relational-Zero Decomposition Principle}
+
+For a problem \(P\) with distinguished relational zero \(Z_R\), define a typed obligation
+\[
+P\longmapsto\mathcal F_P(Z_R).
+\]
+
+The working decomposition is
+\[
+\begin{aligned}
+\mathrm{RH} &\longleftrightarrow \operatorname{Location}(Z_R),\\
+\mathrm{BSD} &\longleftrightarrow \operatorname{Multiplicity/Index}(Z_R),\\
+\mathrm{Yang\!-\!Mills} &\longleftrightarrow \operatorname{SpectralIsolation}(Z_R),\\
+\mathrm{Hodge} &\longleftrightarrow \operatorname{AlgebraicRealization}(Z_R),\\
+\mathrm{Navier\!-\!Stokes} &\longleftrightarrow \operatorname{DynamicalAvoidance}(Z_R),\\
+P\;vs\;NP &\longleftrightarrow \operatorname{ResourceSeparation}(Z_R).
+\end{aligned}
+\]
+
+\begin{remark}
+RZDP is a decomposition principle, not a claim that the six problems are mutually equivalent.
+\end{remark}
+
+\section{Riemann Hypothesis: Location of Zero}
+
+The RH branch is the worked reference case. Three complementary certificates target the same locus \(\Re s=1/2\): an algebraic fixed-point defect, a Shannon/KL information defect with derived coercivity, and a reciprocal-conjugation/projective defect.
+
+The exact logical status carried into this repository is
+\[
+\boxed{\mathrm{A0}\Longrightarrow \mathrm{RH}}.
+\]
+
+\section{Birch--Swinnerton-Dyer: Multiplicity and Index}
+
+The target identity is
+\[
+\operatorname{ord}_{s=1}L(E,s)=\operatorname{rank}E(\mathbb Q).
+\]
+
+For a sufficiently small positively oriented contour \(\gamma\) around \(s=1\),
+\[
+\operatorname{ord}_{s=1}L(E,s)
+=
+\frac{1}{2\pi i}\oint_\gamma \frac{L'(E,s)}{L(E,s)}\,ds.
+\]
+
+The open bridge is the identification of this analytic winding/index with a canonical arithmetic index equal to the Mordell--Weil rank, without importing BSD-equivalent content.
+
+\section{Yang--Mills: Spectral Isolation of Zero}
+
+A unique zero mode does not imply a positive mass gap. The target is therefore quantitative, for example a coercive spectral estimate
+\[
+H\ge m(I-P_0),\qquad m>0,
+\]
+together with the continuum and reconstruction hypotheses required by the standard problem.
+
+The continuum mass-gap bridge remains OPEN until a scale-stable positive physical gap is rigorously transferred.
+
+\section{Hodge Conjecture: Algebraic Realization of Zero}
+
+For codimension \(p\), define
+\[
+Q^p(X)=
+\frac{H^{2p}(X,\mathbb Q)\cap H^{p,p}(X)}
+{\operatorname{im}(CH^p(X)\otimes\mathbb Q\to H^{2p}(X,\mathbb Q))}.
+\]
+
+The conjectural target is \(Q^p(X)=0\). RZDP therefore types Hodge as an algebraic-realization problem. Defining a defect using the desired algebraic-cycle image does not itself prove the realization theorem.
+
+\section{Navier--Stokes: Dynamical Avoidance}
+
+A generic barrier template is
+\[
+D^+B(t)\ge-c(t)B(t),\qquad B(0)>0,\qquad \int_0^T c(t)\,dt<\infty,
+\]
+which implies
+\[
+B(t)\ge B(0)\exp\!\left(-\int_0^t c(\tau)\,d\tau\right)>0.
+\]
+
+The open obligation is to bind a legitimate Navier--Stokes control quantity \(B\) to such a barrier without assuming the desired regularity.
+
+\section{P versus NP: Computational Separation}
+
+A successful route requires a complexity invariant \(\Phi\) compatible with composition and polynomial resources, while forcing super-polynomial resource growth for an NP-complete family. Any candidate must be audited against established lower-bound barriers.
+
+\section{Synthesis}
+
+The common object is not a universal solution formula but a typed zero obligation:
+\[
+Z_R\mapsto
+\{\text{location},\text{multiplicity},\text{gap},\text{realization},\text{avoidance},\text{resource separation}\}.
+\]
+
+A branch moves from OPEN\_BRIDGE or REDUCTION to THEOREM only after every problem-specific bridge is independently proved and provenance-checked.
+
+\bibliographystyle{plain}
+\bibliography{bibliography}
+\end{document}

@@ -1,0 +1,64 @@
+{
+  "schema": "rzdp.claim-ledger/v0.1",
+  "updated": "2026-09-24",
+  "promotion_rule": "No QED by analogy, numerical evidence, shared notation, or structural resemblance. Every problem-specific bridge must be proved independently.",
+  "claims": [
+    {
+      "id": "RZDP-A0",
+      "title": "Universal Relational-Zero Axiom",
+      "status": "FOUNDATIONAL_AXIOM",
+      "statement": "A zero of an admitted observable is realized only as vanishing relational distinction in its defining canonical relation.",
+      "note": "Explicit non-derived premise. Not silently promoted to a theorem."
+    },
+    {
+      "id": "RZDP-CORE-001",
+      "title": "Relational-Zero Decomposition Principle",
+      "status": "REDUCTION",
+      "statement": "Different Millennium-problem obligations can be typed as distinct properties of a distinguished relational zero.",
+      "note": "Classification principle; does not assert equivalence of the problems."
+    },
+    {
+      "id": "RZDP-RH-001",
+      "title": "RH from A0",
+      "status": "CONDITIONAL",
+      "statement": "A0 implies that every non-trivial zero of the completed zeta function lies on Re(s)=1/2.",
+      "dependency": ["RZDP-A0"],
+      "source_status": "Worked reference case with three complementary proof certificates."
+    },
+    {
+      "id": "RZDP-BSD-001",
+      "title": "BSD multiplicity/index bridge",
+      "status": "OPEN_BRIDGE",
+      "statement": "Identify the analytic order/winding of L(E,s) at s=1 with a canonical arithmetic index equal to rank E(Q).",
+      "firewall": "The bridge must not assume BSD-equivalent content."
+    },
+    {
+      "id": "RZDP-YM-001",
+      "title": "Yang-Mills spectral-gap bridge",
+      "status": "OPEN_BRIDGE",
+      "statement": "Derive a positive continuum physical mass gap from a rigorously controlled gauge-sector construction.",
+      "firewall": "Unique vacuum/zero mode alone is insufficient."
+    },
+    {
+      "id": "RZDP-HODGE-001",
+      "title": "Hodge algebraic-realization bridge",
+      "status": "OPEN_BRIDGE",
+      "statement": "Prove that the Hodge-class obstruction quotient vanishes by genuine algebraic-cycle realization.",
+      "firewall": "Do not define the defect using the desired cycle-span equality and call that a proof."
+    },
+    {
+      "id": "RZDP-NS-001",
+      "title": "Navier-Stokes dynamical-avoidance bridge",
+      "status": "OPEN_BRIDGE",
+      "statement": "Construct a non-circular barrier/control quantity that stays positive and excludes finite-time singularity.",
+      "firewall": "The control estimate must not presuppose the target regularity."
+    },
+    {
+      "id": "RZDP-PNP-001",
+      "title": "P versus NP resource-separation bridge",
+      "status": "OPEN_BRIDGE",
+      "statement": "Construct a composition-stable invariant forcing super-polynomial resources for an NP-complete family.",
+      "firewall": "Audit against established lower-bound barriers."
+    }
+  ]
+}
