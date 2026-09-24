@@ -18,6 +18,13 @@ A0
     |   +-- epsilon = ord(det)-dim H1 >= 0
     |   +-- epsilon = 0 iff beta iso
     |
+    +-- Smith multiplicity spectrum ------- THEOREM
+    |   +-- invariant factors T^{a_i}
+    |   +-- dim ker = number of a_i>0
+    |   +-- ord(det) = sum a_i
+    |   +-- contact depth d_i=a_i-1
+    |   +-- epsilon = sum d_i
+    |
     +-- Determinant relative valuation ---- THEOREM
     |   +-- two sections differ by scalar q
     |   +-- order difference = ord(q)
@@ -55,9 +62,10 @@ The existing PNCS/Infinities Fredholm shift seam is not promoted into BSD: no ca
 The strongest current BSD normal form is conditional on global registration:
 
 ```text
-BSD defect = Bockstein multiplicity excess + Sha corank
+BSD defect = higher contact depth + Sha corank
+           = sum_i d_i(E,p) + s_p(E)
            = epsilon_{E,p} + s_p(E),
-with both terms nonnegative.
+with every displayed obstruction term nonnegative after global registration.
 ```
 
 The determinant-line carrier is standard arithmetic structure; proving the universal complex-L/zeta comparison remains the unresolved analytic registration.

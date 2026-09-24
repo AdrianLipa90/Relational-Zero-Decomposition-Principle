@@ -307,6 +307,39 @@ s_p(E)=0.
 \]
 The local theorem supplies nonnegativity; the unresolved content is the universal analytic/determinant registration, specialization/control, regulator nondegeneracy, and \(\Sha\)-divisible control.
 
+Over the DVR \(R=K[[T]]\), Smith normal form sharpens this further. If
+\[
+U(T)A(T)V(T)
+=
+\operatorname{diag}(T^{a_1},\ldots,T^{a_r},1,\ldots,1),
+\qquad a_i\ge1,
+\]
+then
+\[
+\dim\ker A(0)=r,
+\qquad
+\operatorname{ord}_{T=0}\det A(T)=\sum_{i=1}^r a_i.
+\]
+Writing
+\[
+d_i:=a_i-1\ge0,
+\]
+one has the exact excess spectrum
+\[
+\boxed{
+\varepsilon(A)=\sum_{i=1}^r d_i.
+}
+\]
+Thus \(\varepsilon=0\) exactly when every registered zero mode is first-order transverse. Under the BSD global-registration hypotheses,
+\[
+\boxed{
+r_{\rm an}(E)-r_{\rm MW}(E)
+=
+\sum_{i=1}^{r_p(E)}d_i(E,p)+s_p(E).
+}
+\]
+Hence the current RZDP normal form decomposes analytic multiplicity into Mordell--Weil modes, \(\Sha\)-modes, and higher contact depth.
+
 \section{Yang--Mills: Spectral Isolation of Zero}
 
 A unique zero mode does not imply a positive mass gap. The target is therefore quantitative, for example a coercive spectral estimate

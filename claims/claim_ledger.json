@@ -1,5 +1,5 @@
 {
-  "schema": "rzdp.claim-ledger/v0.6",
+  "schema": "rzdp.claim-ledger/v0.7",
   "updated": "2026-09-24",
   "promotion_rule": "No QED by analogy, numerical evidence, shared notation, or structural resemblance. Every problem-specific bridge must be proved independently.",
   "claims": [
@@ -65,6 +65,17 @@
       "note": "Carrier existence does not identify the complex L-germ with the arithmetic section and does not prove BSD."
     },
     {
+      "id": "RZDP-SNF-001",
+      "title": "Smith-normal zero-mode multiplicity spectrum",
+      "status": "THEOREM",
+      "statement": "For A(T) over K[[T]] with nonzero determinant, Smith normal form gives invariant factors T^{a_i}. Then dim ker A(0) is the number of positive a_i, ord_T det A(T)=sum a_i, and the excess epsilon equals sum(a_i-1)>=0. Equality epsilon=0 holds iff every a_i=1, equivalently the first crossing/Bockstein is an isomorphism.",
+      "dependency": [
+        "RZDP-MIT-001",
+        "RZDP-BCX-001"
+      ],
+      "note": "Exact local DVR algebra. The a_i define the zero-mode contact-depth spectrum d_i=a_i-1."
+    },
+    {
       "id": "RZDP-BSD-B3-001",
       "title": "BSD B3 as Bockstein/height nondegeneracy",
       "status": "CONDITIONAL",
@@ -114,20 +125,22 @@
       "id": "RZDP-BSD-001",
       "title": "BSD nonnegative two-obstruction bridge",
       "status": "OPEN_BRIDGE",
-      "statement": "After verified analytic/determinant registration and Selmer specialization, the BSD rank defect decomposes as epsilon_{E,p}+s_p, where epsilon_{E,p}=r_an-r_p>=0 is the Bockstein multiplicity excess and s_p=corank Sha[p^infty]>=0. BSD rank equality is then equivalent to epsilon_{E,p}=0 and s_p=0.",
+      "statement": "After verified global registration, the BSD defect decomposes as sum_i d_i(E,p)+s_p(E), where d_i=a_i-1 are nonnegative Smith contact depths of the registered Selmer zero modes and s_p is the p-primary Sha corank. BSD rank equality is then equivalent to all d_i=0 and s_p=0.",
       "firewall": "The nonnegative decomposition is conditional on the global analytic/determinant and specialization registrations. These cannot be inferred from the local multiplicity theorem.",
       "dependency": [
         "RZDP-MIT-001",
         "RZDP-BSD-AN-001",
         "RZDP-BSD-AR-001",
-        "RZDP-BSD-DEC-001"
+        "RZDP-BSD-DEC-001",
+        "RZDP-SNF-001",
+        "RZDP-BSD-CARRIER-001"
       ],
       "operator_criterion": {
         "B1": "det A_E(z)=u_E(z)L(E,1+z) with u_E(0) nonzero",
         "B2": "ker A_E(0) canonically isomorphic to E(Q) tensor C",
         "B3": "crossing map ker A_E(0) -> coker A_E(0) is an isomorphism"
       },
-      "note": "Local algebra closes the sign problem once D2/D3/D5 are established: epsilon=r_an-r_p=2k_p is then an even nonnegative integer.",
+      "note": "Strongest current normal form: analytic multiplicity = Mordell-Weil modes + Sha modes + higher contact depth, conditional on the universal analytic/determinant and specialization registrations.",
       "search_gates": {
         "D1": "determinant/Selmer carrier and arithmetic Stark-system realization",
         "D2": "complex central L-germ -> zeta/determinant section",
