@@ -76,10 +76,20 @@ Let \(q:\mathbb C^n\to C\) be the quotient map and define
 \Gamma_A=q\circ A'(0)|_K:K\to C.
 \]
 
-\begin{theorem}[Relational Multiplicity--Index Transfer]
-If \(\Gamma_A\) is an isomorphism, then
+\begin{theorem}[Relational Multiplicity--Index Transfer and Excess]
+Assume \(\det A\) is not identically zero. Then
 \[
-\boxed{\operatorname{ord}_{z=0}\det A(z)=\dim\ker A(0).}
+\boxed{
+\operatorname{ord}_{z=0}\det A(z)\ge \dim\ker A(0).
+}
+\]
+Moreover,
+\[
+\boxed{
+\operatorname{ord}_{z=0}\det A(z)=\dim\ker A(0)
+\iff
+\Gamma_A\text{ is an isomorphism}.
+}
 \]
 \end{theorem}
 
@@ -92,14 +102,31 @@ where \(a(0)=b(0)=c(0)=0\) and \(d(0):X\to Y\) is invertible. Thus, for small \(
 \[
 \det A(z)=\det d(z)\det\!\bigl(a(z)-b(z)d(z)^{-1}c(z)\bigr).
 \]
-Since \(b(z)d(z)^{-1}c(z)=O(z^2)\) and \(a(z)=z\Gamma_A+O(z^2)\),
+Since \(b(z)d(z)^{-1}c(z)=O(z^2)\),
 \[
-\det A(z)=z^r u(z),\qquad u(0)\ne0,
+a(z)-b(z)d(z)^{-1}c(z)
+=
+z\bigl(\Gamma_A+O(z)\bigr).
 \]
-which proves the claim.
+Every entry of this \(r\times r\) Schur complement is divisible by \(z\), so its determinant is divisible by \(z^r\). Hence
+\[
+\operatorname{ord}_{z=0}\det A(z)\ge r.
+\]
+The coefficient of \(z^r\) is \(\det d(0)\det\Gamma_A\), which is nonzero exactly when \(\Gamma_A\) is invertible. This proves both statements.
 \end{proof}
 
-This theorem is independent of BSD. It gives a precise mechanism by which determinant multiplicity equals the number of zero modes under a transverse crossing.
+Define the multiplicity excess
+\[
+\varepsilon(A):=
+\operatorname{ord}_{z=0}\det A(z)-\dim\ker A(0).
+\]
+Then
+\[
+\boxed{\varepsilon(A)\in\mathbb Z_{\ge0},}
+\qquad
+\boxed{\varepsilon(A)=0\iff\Gamma_A\text{ is an isomorphism}.}
+\]
+This theorem is independent of BSD. It gives a precise nonnegative measure of failure of transverse zero-mode crossing.
 
 \section{Birch--Swinnerton-Dyer: Multiplicity and Index}
 
@@ -222,6 +249,63 @@ Hence nondegenerate Bockstein implies
 \boxed{\operatorname{ord}_{T=0}\det A(T)=\dim_KH^1.}
 \]
 In self-dual Selmer-complex settings the Bockstein is the mechanism underlying \(p\)-adic height/regulator constructions; modern leading-term theories make this derivative structure explicit \cite{BurnsKuriharaSano2025,BenoisBuyukboduk2026}. Thus B3 is not an unspecified transversality condition: arithmetically it is a regulator-nondegeneracy gate. This still leaves the global analytic registration, main-conjecture/determinant comparison, specialization/control, and \(\Sha\)-divisible gates open.
+
+More generally, without assuming nondegeneracy,
+\[
+\boxed{
+\varepsilon(C_R)
+:=
+\operatorname{ord}_{T=0}\det A(T)-\dim_KH^1(C_0)
+\ge0,
+}
+\]
+and
+\[
+\varepsilon(C_R)=0
+\iff
+\beta\text{ is an isomorphism}.
+\]
+Thus, once the global registration identifies the determinant order with \(r_{\rm an}(E)\) and the specialized \(H^1\)-dimension with \(r_p(E)\), one obtains
+\[
+\boxed{
+\varepsilon_{E,p}=r_{\rm an}(E)-r_p(E)\ge0.
+}
+\]
+By parity, \(\varepsilon_{E,p}=2k_p(E)\) is then an even nonnegative integer.
+
+The natural common carrier is the determinant line
+\[
+\Delta_{E,p}=\operatorname{Det}^{-1}_R C_{E,p}.
+\]
+For any invertible rank-one \(R\)-module \(\Delta\) and nonzero meromorphic sections \(s_1=q\,s_2\),
+\[
+\boxed{
+\operatorname{ord}_I(s_1)-\operatorname{ord}_I(s_2)=\operatorname{ord}_I(q).
+}
+\]
+Hence equality of multiplicities is equivalent to the relative trivialization ratio being a unit. Recent work proves, under mild hypotheses, that the determinant of a Nekov\'a\v{r} Selmer complex is canonically isomorphic to the corresponding Stark-system module \cite{MaciasCastilloSano2026}. This validates the determinant line as a canonical arithmetic carrier, but not the universal analytic registration needed for BSD.
+
+Combining the registered multiplicity excess with the Selmer--\(\Sha\) exact sequence gives the sharpened conditional normal form
+\[
+\boxed{
+r_{\rm an}(E)-r_{\rm MW}(E)
+=
+\varepsilon_{E,p}+s_p(E),
+\qquad
+\varepsilon_{E,p}\ge0,\quad s_p(E)\ge0.
+}
+\]
+Therefore, under the global registration hypotheses,
+\[
+\boxed{
+\mathrm{BSD}_{\rm rank}
+\iff
+\varepsilon_{E,p}=0
+\ \text{and}\
+s_p(E)=0.
+}
+\]
+The local theorem supplies nonnegativity; the unresolved content is the universal analytic/determinant registration, specialization/control, regulator nondegeneracy, and \(\Sha\)-divisible control.
 
 \section{Yang--Mills: Spectral Isolation of Zero}
 

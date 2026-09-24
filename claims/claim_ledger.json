@@ -1,5 +1,5 @@
 {
-  "schema": "rzdp.claim-ledger/v0.5",
+  "schema": "rzdp.claim-ledger/v0.6",
   "updated": "2026-09-24",
   "promotion_rule": "No QED by analogy, numerical evidence, shared notation, or structural resemblance. Every problem-specific bridge must be proved independently.",
   "claims": [
@@ -29,21 +29,40 @@
     },
     {
       "id": "RZDP-MIT-001",
-      "title": "Relational Multiplicity-Index Transfer Lemma",
+      "title": "Relational Multiplicity-Index Transfer and Excess Theorem",
       "status": "THEOREM",
-      "statement": "For a holomorphic square matrix family A(z), if the induced crossing map ker A(0) -> coker A(0) from A'(0) is an isomorphism, then ord_0 det A(z)=dim ker A(0).",
+      "statement": "For a holomorphic square matrix family A(z) with det A not identically zero, ord_0 det A(z) >= dim ker A(0). Equality holds iff the induced crossing map ker A(0) -> coker A(0) from A'(0) is an isomorphism.",
       "dependency": [],
-      "note": "Finite-dimensional theorem proved by block decomposition and Schur complement."
+      "note": "Finite-dimensional theorem proved by block decomposition and Schur complement. Defines nonnegative excess epsilon(A)=ord det A-dim ker."
     },
     {
       "id": "RZDP-BCX-001",
       "title": "Bockstein-crossing identity for two-term perfect complexes",
       "status": "THEOREM",
-      "statement": "For a two-term perfect complex K[[T]]^n -> K[[T]]^n represented by A(T), the augmentation Bockstein H^1(C_0)->H^2(C_0) is induced by q A'(0)|ker A(0), up to the conventional generator/sign of (T)/(T^2).",
+      "statement": "For a two-term perfect complex K[[T]]^n -> K[[T]]^n represented by A(T), the augmentation Bockstein is induced by q A'(0)|ker A(0), and epsilon(C)=ord_T det A(T)-dim H^1(C_0) is nonnegative; epsilon(C)=0 iff the Bockstein is an isomorphism.",
       "dependency": [
         "RZDP-MIT-001"
       ],
-      "note": "Exact local-algebra crosswalk. If the Bockstein is an isomorphism, ord_T det A(T)=dim H^1(C_0)."
+      "note": "Exact local-algebra crosswalk and nonnegative multiplicity-excess theorem."
+    },
+    {
+      "id": "RZDP-DET-REL-001",
+      "title": "Relative determinant trivialization valuation",
+      "status": "THEOREM",
+      "statement": "For an invertible rank-one module Delta over a one-dimensional local domain R and nonzero meromorphic sections s1=q s2, ord_I(s1)-ord_I(s2)=ord_I(q). Equality of section orders is equivalent to q being an R-unit.",
+      "dependency": [],
+      "note": "Abstract determinant-line algebra; independent of BSD."
+    },
+    {
+      "id": "RZDP-BSD-CARRIER-001",
+      "title": "Selmer determinant as canonical BSD carrier",
+      "status": "CONDITIONAL",
+      "statement": "Under the standard hypotheses of Nekovar-style Selmer-complex/Stark-system formalisms, the determinant line of the Selmer complex is a canonical arithmetic rank-one carrier; recent 2026 work proves a canonical isomorphism between the determinant of a Selmer complex and the corresponding Stark-system module.",
+      "dependency": [
+        "RZDP-DET-REL-001"
+      ],
+      "source": "Macias Castillo-Sano, arXiv:2603.23978 (2026).",
+      "note": "Carrier existence does not identify the complex L-germ with the arithmetic section and does not prove BSD."
     },
     {
       "id": "RZDP-BSD-B3-001",
@@ -93,10 +112,10 @@
     },
     {
       "id": "RZDP-BSD-001",
-      "title": "BSD two-stage integer-lift bridge",
+      "title": "BSD nonnegative two-obstruction bridge",
       "status": "OPEN_BRIDGE",
-      "statement": "Close the exact defect 2 k_p+s_p by an independently proved analytic-to-Selmer integer comparison and Sha-corank control, or by a single stronger comparison theorem.",
-      "firewall": "Known parity closes only k_p integrality; Selmer-to-Mordell-Weil carries an explicit Sha-corank obstruction. Neither may be silently set to zero.",
+      "statement": "After verified analytic/determinant registration and Selmer specialization, the BSD rank defect decomposes as epsilon_{E,p}+s_p, where epsilon_{E,p}=r_an-r_p>=0 is the Bockstein multiplicity excess and s_p=corank Sha[p^infty]>=0. BSD rank equality is then equivalent to epsilon_{E,p}=0 and s_p=0.",
+      "firewall": "The nonnegative decomposition is conditional on the global analytic/determinant and specialization registrations. These cannot be inferred from the local multiplicity theorem.",
       "dependency": [
         "RZDP-MIT-001",
         "RZDP-BSD-AN-001",
@@ -108,13 +127,14 @@
         "B2": "ker A_E(0) canonically isomorphic to E(Q) tensor C",
         "B3": "crossing map ker A_E(0) -> coker A_E(0) is an isomorphism"
       },
-      "note": "MIT + Bockstein crosswalk close the local multiplicity mechanism. BSD still requires the global C1-C5 arithmetic-analytic registration chain.",
+      "note": "Local algebra closes the sign problem once D2/D3/D5 are established: epsilon=r_an-r_p=2k_p is then an even nonnegative integer.",
       "search_gates": {
-        "C1": "complex central L-germ -> p-adic/zeta determinant registration, including exceptional-zero corrections",
-        "C2": "p-adic/zeta element -> determinant/characteristic element of the Selmer complex",
-        "C3": "Bockstein/height regulator nondegeneracy",
-        "C4": "specialization/control of Selmer cohomology",
-        "C5": "control of the divisible p-primary Tate-Shafarevich obstruction"
+        "D1": "determinant/Selmer carrier and arithmetic Stark-system realization",
+        "D2": "complex central L-germ -> zeta/determinant section",
+        "D3": "analytic section -> Selmer determinant section up to controlled unit",
+        "D4": "Bockstein excess epsilon>=0; epsilon=0 iff nondegenerate crossing",
+        "D5": "specialization/control identifying H1 with Selmer corank",
+        "D6": "Sha-divisible control s_p=0 or a direct proof that total defect vanishes"
       }
     },
     {
