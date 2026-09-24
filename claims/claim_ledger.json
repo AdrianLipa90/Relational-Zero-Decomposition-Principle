@@ -1,5 +1,5 @@
 {
-  "schema": "rzdp.claim-ledger/v0.7",
+  "schema": "rzdp.claim-ledger/v0.8",
   "updated": "2026-09-24",
   "promotion_rule": "No QED by analogy, numerical evidence, shared notation, or structural resemblance. Every problem-specific bridge must be proved independently.",
   "claims": [
@@ -103,6 +103,37 @@
       "note": "Mordell-Weil finite generation plus finite-dimensional linear algebra."
     },
     {
+      "id": "RZDP-BSD-NT-001",
+      "title": "Neron-Tate arithmetic transversality",
+      "status": "THEOREM",
+      "statement": "The Neron-Tate canonical height is positive definite on the real free Mordell-Weil space, so its associated pairing gives an isomorphism V_E^R -> (V_E^R)* and the Neron-Tate regulator is positive.",
+      "dependency": [
+        "RZDP-BSD-AR-001"
+      ],
+      "source": "Silverman, The Arithmetic of Elliptic Curves, 2nd ed., 2009.",
+      "note": "Standard arithmetic theorem; independent of BSD."
+    },
+    {
+      "id": "RZDP-BSD-HTX-001",
+      "title": "Direct crossing-to-Neron-Tate reduction",
+      "status": "CONDITIONAL",
+      "statement": "If a holomorphic BSD operator family has determinant equal to the complex L-germ up to a unit, kernel/cokernel canonically equal to the complexified free Mordell-Weil space and its dual, and crossing equal to the complexified Neron-Tate height map, then BSD rank equality follows.",
+      "dependency": [
+        "RZDP-MIT-001",
+        "RZDP-BSD-NT-001"
+      ],
+      "note": "Neron-Tate nondegeneracy is standard; the operator construction, analytic registration, and crossing-height identification remain open."
+    },
+    {
+      "id": "RZDP-BSD-R1-001",
+      "title": "Rank-one derivative-height sanity check",
+      "status": "THEOREM",
+      "statement": "Gross-Zagier supplies a first-derivative/Neron-Tate-height formula for Heegner points, and Kolyvagin's Euler-system results convert the resulting non-torsion point into rank and Tate-Shafarevich control; the BSD rank equality is known for elliptic curves over Q of analytic rank at most one.",
+      "dependency": [],
+      "source": "Gross-Zagier, Invent. Math. 84 (1986); Kolyvagin, Math. USSR-Izv. 32 (1989).",
+      "note": "Known low-rank result validating the derivative-height mechanism; not a higher-rank closure."
+    },
+    {
       "id": "RZDP-BSD-PAR-001",
       "title": "BSD analytic/Selmer parity seam",
       "status": "THEOREM",
@@ -140,7 +171,7 @@
         "B2": "ker A_E(0) canonically isomorphic to E(Q) tensor C",
         "B3": "crossing map ker A_E(0) -> coker A_E(0) is an isomorphism"
       },
-      "note": "Strongest current normal form: analytic multiplicity = Mordell-Weil modes + Sha modes + higher contact depth, conditional on the universal analytic/determinant and specialization registrations.",
+      "note": "Strongest current split: Route A targets Mordell-Weil directly and can use standard Neron-Tate nondegeneracy once crossing=height is independently proved. Route S retains the registered nonnegative contact-depth plus Sha-corank decomposition. The two routes are not identified.",
       "search_gates": {
         "D1": "determinant/Selmer carrier and arithmetic Stark-system realization",
         "D2": "complex central L-germ -> zeta/determinant section",
@@ -148,6 +179,21 @@
         "D4": "Bockstein excess epsilon>=0; epsilon=0 iff nondegenerate crossing",
         "D5": "specialization/control identifying H1 with Selmer corank",
         "D6": "Sha-divisible control s_p=0 or a direct proof that total defect vanishes"
+      },
+      "routes": {
+        "archimedean_direct": {
+          "A1": "complex L-germ -> holomorphic determinant family",
+          "A2": "kernel/cokernel -> complexified free Mordell-Weil space and its dual",
+          "A3": "crossing -> Neron-Tate height map; nondegeneracy then follows from RZDP-BSD-NT-001"
+        },
+        "selmer_padic": {
+          "D1": "determinant/Selmer carrier and arithmetic Stark-system realization",
+          "D2": "complex central L-germ -> zeta/determinant section",
+          "D3": "analytic section -> Selmer determinant section up to controlled unit",
+          "D4": "Smith/Bockstein contact-depth spectrum; all d_i=0 iff nondegenerate crossing",
+          "D5": "specialization/control identifying H1 with Selmer corank",
+          "D6": "Sha-divisible control s_p=0 or direct closure of total defect"
+        }
       }
     },
     {

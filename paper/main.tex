@@ -307,6 +307,24 @@ s_p(E)=0.
 \]
 The local theorem supplies nonnegativity; the unresolved content is the universal analytic/determinant registration, specialization/control, regulator nondegeneracy, and \(\Sha\)-divisible control.
 
+There is also a distinct archimedean realization. Let
+\[
+V_E^{\mathbb R}=(E(\mathbb Q)/E(\mathbb Q)_{\rm tors})\otimes_{\mathbb Z}\mathbb R.
+\]
+The N\'eron--Tate canonical height is positive definite on \(V_E^{\mathbb R}\), so its associated pairing defines an isomorphism
+\[
+H_{\rm NT}:V_E^{\mathbb R}\xrightarrow{\sim}(V_E^{\mathbb R})^*
+\]
+and the N\'eron--Tate regulator is positive \cite{SilvermanAEC2009}. Therefore, for any independently constructed holomorphic family \(B_E(z)\) whose kernel and cokernel identify with the complexified Mordell--Weil space and its dual, an independent identity
+\[
+\Gamma_{B_E}=H_{\rm NT}\otimes\mathbb C
+\]
+would close transversality automatically. If moreover \(\det B_E(z)=u_E(z)L(E,1+z)\) with \(u_E(0)\neq0\), the multiplicity--index theorem yields BSD rank equality.
+
+This archimedean route is not the same as the Selmer/Bockstein route. The latter has specialized dimension \(r_p=r_{\rm MW}+s_p\), so N\'eron--Tate positivity on the Mordell--Weil quotient cannot silently remove divisible \(\Sha\)-directions. The two routes are therefore kept separate.
+
+The known analytic-rank-one theory is a strong consistency check: Gross--Zagier relates an appropriate first central \(L\)-derivative to the N\'eron--Tate height of a Heegner point, up to a nonzero explicit factor \cite{GrossZagier1986}; Kolyvagin's Euler-system results then control the Mordell--Weil rank and Tate--Shafarevich group \cite{Kolyvagin1989}. Thus the derivative--height mechanism genuinely occurs in the known simple-zero case, while the arbitrary-rank crossing--height comparison remains open.
+
 Over the DVR \(R=K[[T]]\), Smith normal form sharpens this further. If
 \[
 U(T)A(T)V(T)
