@@ -1,5 +1,5 @@
 {
-  "schema": "rzdp.claim-ledger/v0.3",
+  "schema": "rzdp.claim-ledger/v0.4",
   "updated": "2026-09-24",
   "promotion_rule": "No QED by analogy, numerical evidence, shared notation, or structural resemblance. Every problem-specific bridge must be proved independently.",
   "claims": [
@@ -26,6 +26,14 @@
         "RZDP-A0"
       ],
       "source_status": "Worked reference case with three complementary proof certificates."
+    },
+    {
+      "id": "RZDP-MIT-001",
+      "title": "Relational Multiplicity-Index Transfer Lemma",
+      "status": "THEOREM",
+      "statement": "For a holomorphic square matrix family A(z), if the induced crossing map ker A(0) -> coker A(0) from A'(0) is an isomorphism, then ord_0 det A(z)=dim ker A(0).",
+      "dependency": [],
+      "note": "Finite-dimensional theorem proved by block decomposition and Schur complement."
     },
     {
       "id": "RZDP-BSD-AN-001",
@@ -67,7 +75,19 @@
       "title": "BSD two-stage integer-lift bridge",
       "status": "OPEN_BRIDGE",
       "statement": "Close the exact defect 2 k_p+s_p by an independently proved analytic-to-Selmer integer comparison and Sha-corank control, or by a single stronger comparison theorem.",
-      "firewall": "Known parity closes only k_p integrality; Selmer-to-Mordell-Weil carries an explicit Sha-corank obstruction. Neither may be silently set to zero."
+      "firewall": "Known parity closes only k_p integrality; Selmer-to-Mordell-Weil carries an explicit Sha-corank obstruction. Neither may be silently set to zero.",
+      "dependency": [
+        "RZDP-MIT-001",
+        "RZDP-BSD-AN-001",
+        "RZDP-BSD-AR-001",
+        "RZDP-BSD-DEC-001"
+      ],
+      "operator_criterion": {
+        "B1": "det A_E(z)=u_E(z)L(E,1+z) with u_E(0) nonzero",
+        "B2": "ker A_E(0) canonically isomorphic to E(Q) tensor C",
+        "B3": "crossing map ker A_E(0) -> coker A_E(0) is an isomorphism"
+      },
+      "note": "B1+B2+B3 imply BSD rank equality by RZDP-MIT-001. Construction of such A_E remains open."
     },
     {
       "id": "RZDP-YM-001",

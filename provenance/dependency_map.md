@@ -7,12 +7,20 @@ A0
     |
     +-- RH: location ---------------------- CONDITIONAL ON A0
     |
+    +-- Multiplicity-index transfer ------- THEOREM
+    |   +-- transverse crossing
+    |       -> ord(det A) = dim ker A
+    |
     +-- BSD: multiplicity/index
     |   +-- analytic order = winding ------ THEOREM
     |   +-- analytic order = local length - THEOREM
     |   +-- MW rank = exterior degree ----- THEOREM
     |   +-- analytic/Selmer parity mod 2 -- THEOREM
-    |   +-- full integer lift ------------- OPEN_BRIDGE
+    |   +-- Selmer/Sha defect split ------- THEOREM
+    |   +-- B1 determinant = L-germ ------- OPEN_BRIDGE
+    |   +-- B2 kernel = Mordell-Weil ------ OPEN_BRIDGE
+    |   +-- B3 crossing transversality ---- OPEN_BRIDGE
+    |   +-- B1+B2+B3 -> BSD --------------- CONDITIONAL THEOREM
     |
     +-- Yang-Mills: spectral isolation ---- OPEN_BRIDGE
     +-- Hodge: algebraic realization ------ OPEN_BRIDGE
@@ -21,5 +29,7 @@ A0
 ```
 
 The map is descriptive, not a proof of equivalence between branches.
+
+The Bloch-Kato / Tamagawa-number determinant-line formalism identifies the canonical standard search space for BSD B1/B2, but its universal leading-term comparison is not treated as already proved.
 
 The existing PNCS/Infinities Fredholm shift seam is not promoted into BSD: no canonical arithmetic-analytic comparison map has yet been proved.

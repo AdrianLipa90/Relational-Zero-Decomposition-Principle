@@ -65,6 +65,42 @@ The exact logical status carried into this repository is
 \boxed{\mathrm{A0}\Longrightarrow \mathrm{RH}}.
 \]
 
+\section{Multiplicity--Index Transfer}
+
+Let \(A(z):\mathbb C^n\to\mathbb C^n\) be a holomorphic matrix family near \(z=0\). Put
+\[
+K=\ker A(0),\qquad C=\operatorname{coker}A(0),\qquad r=\dim K=\dim C.
+\]
+Let \(q:\mathbb C^n\to C\) be the quotient map and define
+\[
+\Gamma_A=q\circ A'(0)|_K:K\to C.
+\]
+
+\begin{theorem}[Relational Multiplicity--Index Transfer]
+If \(\Gamma_A\) is an isomorphism, then
+\[
+\boxed{\operatorname{ord}_{z=0}\det A(z)=\dim\ker A(0).}
+\]
+\end{theorem}
+
+\begin{proof}
+Choose a domain complement \(X\) and a codomain complement \(\widetilde C\) such that \(\mathbb C^n=K\oplus X\), \(\mathbb C^n=\widetilde C\oplus Y\), \(Y=\operatorname{im}A(0)\), and \(\widetilde C\cong C\) under the quotient map. In block form,
+\[
+A(z)=\begin{pmatrix}a(z)&b(z)\\c(z)&d(z)\end{pmatrix},
+\]
+where \(a(0)=b(0)=c(0)=0\) and \(d(0):X\to Y\) is invertible. Thus, for small \(z\),
+\[
+\det A(z)=\det d(z)\det\!\bigl(a(z)-b(z)d(z)^{-1}c(z)\bigr).
+\]
+Since \(b(z)d(z)^{-1}c(z)=O(z^2)\) and \(a(z)=z\Gamma_A+O(z^2)\),
+\[
+\det A(z)=z^r u(z),\qquad u(0)\ne0,
+\]
+which proves the claim.
+\end{proof}
+
+This theorem is independent of BSD. It gives a precise mechanism by which determinant multiplicity equals the number of zero modes under a transverse crossing.
+
 \section{Birch--Swinnerton-Dyer: Multiplicity and Index}
 
 For an elliptic curve \(E/\mathbb Q\), write
@@ -157,6 +193,17 @@ and
 \dim_{\mathbb Q}(E(\mathbb Q)\otimes\mathbb Q).
 \]
 Only then does the BSD branch promote to Q.E.D.
+
+Equivalently, the Multiplicity--Index Transfer theorem yields a three-gate operator criterion. It is sufficient to construct \(A_E(z)\) such that
+\[
+\det A_E(z)=u_E(z)L(E,1+z),\qquad u_E(0)\ne0,
+\]
+\[
+\ker A_E(0)\cong E(\mathbb Q)\otimes_{\mathbb Z}\mathbb C,
+\]
+and the induced crossing map \(\Gamma_{A_E}\) is invertible. These are labelled B1, B2 and B3 respectively. Their conjunction implies BSD rank equality, but none may be defined using that equality.
+
+The determinant-line formulation of the Tamagawa-number conjecture shows that determinants of perfect Galois-cohomology complexes are the standard arithmetic setting in which such analytic/arithmetic comparisons live \cite{NguyenDet2015}. This identifies a canonical search space, not a completed proof.
 
 \section{Yang--Mills: Spectral Isolation of Zero}
 
