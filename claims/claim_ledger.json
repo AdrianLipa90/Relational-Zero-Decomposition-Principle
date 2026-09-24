@@ -1,5 +1,5 @@
 {
-  "schema": "rzdp.claim-ledger/v0.4",
+  "schema": "rzdp.claim-ledger/v0.5",
   "updated": "2026-09-24",
   "promotion_rule": "No QED by analogy, numerical evidence, shared notation, or structural resemblance. Every problem-specific bridge must be proved independently.",
   "claims": [
@@ -34,6 +34,27 @@
       "statement": "For a holomorphic square matrix family A(z), if the induced crossing map ker A(0) -> coker A(0) from A'(0) is an isomorphism, then ord_0 det A(z)=dim ker A(0).",
       "dependency": [],
       "note": "Finite-dimensional theorem proved by block decomposition and Schur complement."
+    },
+    {
+      "id": "RZDP-BCX-001",
+      "title": "Bockstein-crossing identity for two-term perfect complexes",
+      "status": "THEOREM",
+      "statement": "For a two-term perfect complex K[[T]]^n -> K[[T]]^n represented by A(T), the augmentation Bockstein H^1(C_0)->H^2(C_0) is induced by q A'(0)|ker A(0), up to the conventional generator/sign of (T)/(T^2).",
+      "dependency": [
+        "RZDP-MIT-001"
+      ],
+      "note": "Exact local-algebra crosswalk. If the Bockstein is an isomorphism, ord_T det A(T)=dim H^1(C_0)."
+    },
+    {
+      "id": "RZDP-BSD-B3-001",
+      "title": "BSD B3 as Bockstein/height nondegeneracy",
+      "status": "CONDITIONAL",
+      "statement": "Under the standard self-dual Selmer-complex hypotheses identifying the cyclotomic Bockstein with the p-adic height construction, RZDP gate B3 is the nondegeneracy of the corresponding Bockstein/height regulator.",
+      "dependency": [
+        "RZDP-BCX-001"
+      ],
+      "source": "Nekovar Selmer-complex formalism; Benois-Buyukboduk 2026; Burns-Kurihara-Sano 2025.",
+      "note": "This identifies the arithmetic meaning of B3; it does not assert universal regulator nondegeneracy."
     },
     {
       "id": "RZDP-BSD-AN-001",
@@ -87,7 +108,14 @@
         "B2": "ker A_E(0) canonically isomorphic to E(Q) tensor C",
         "B3": "crossing map ker A_E(0) -> coker A_E(0) is an isomorphism"
       },
-      "note": "B1+B2+B3 imply BSD rank equality by RZDP-MIT-001. Construction of such A_E remains open."
+      "note": "MIT + Bockstein crosswalk close the local multiplicity mechanism. BSD still requires the global C1-C5 arithmetic-analytic registration chain.",
+      "search_gates": {
+        "C1": "complex central L-germ -> p-adic/zeta determinant registration, including exceptional-zero corrections",
+        "C2": "p-adic/zeta element -> determinant/characteristic element of the Selmer complex",
+        "C3": "Bockstein/height regulator nondegeneracy",
+        "C4": "specialization/control of Selmer cohomology",
+        "C5": "control of the divisible p-primary Tate-Shafarevich obstruction"
+      }
     },
     {
       "id": "RZDP-YM-001",

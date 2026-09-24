@@ -205,6 +205,24 @@ and the induced crossing map \(\Gamma_{A_E}\) is invertible. These are labelled 
 
 The determinant-line formulation of the Tamagawa-number conjecture shows that determinants of perfect Galois-cohomology complexes are the standard arithmetic setting in which such analytic/arithmetic comparisons live \cite{NguyenDet2015}. This identifies a canonical search space, not a completed proof.
 
+There is also an exact local cohomological realization of the crossing map. Let \(R=K[[T]]\) and suppose a perfect amplitude-\([1,2]\), Euler-characteristic-zero complex is represented locally by
+\[
+R^n\xrightarrow{A(T)}R^n.
+\]
+After specialization at \(T=0\),
+\[
+H^1=\ker A(0),\qquad H^2=\operatorname{coker}A(0).
+\]
+The Bockstein map induced by the augmentation \(R\to K\) is, up to the conventional generator/sign of \((T)/(T^2)\),
+\[
+\boxed{\beta=q\circ A'(0)|_{\ker A(0)}.}
+\]
+Hence nondegenerate Bockstein implies
+\[
+\boxed{\operatorname{ord}_{T=0}\det A(T)=\dim_KH^1.}
+\]
+In self-dual Selmer-complex settings the Bockstein is the mechanism underlying \(p\)-adic height/regulator constructions; modern leading-term theories make this derivative structure explicit \cite{BurnsKuriharaSano2025,BenoisBuyukboduk2026}. Thus B3 is not an unspecified transversality condition: arithmetically it is a regulator-nondegeneracy gate. This still leaves the global analytic registration, main-conjecture/determinant comparison, specialization/control, and \(\Sha\)-divisible gates open.
+
 \section{Yang--Mills: Spectral Isolation of Zero}
 
 A unique zero mode does not imply a positive mass gap. The target is therefore quantitative, for example a coercive spectral estimate
