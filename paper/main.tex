@@ -119,7 +119,29 @@ Therefore the BSD rank statement is exactly the equality of two independently de
 
 A known theorem closes the parity shadow of this bridge: for every prime \(p\), the analytic rank and the \(p^\infty\)-Selmer rank have the same parity over \(\mathbb Q\) \cite{DokchitserDokchitser2010}. The full integer lift remains open.
 
-The Selmer-complex formalism makes the Tate--Shafarevich correction explicit \cite{Nekovar2006}. The existing project-side unilateral-shift Fredholm theorem supplies an exact integer-index model, but no canonical BSD comparison map to that operator has yet been proved. It therefore cannot be used as the missing lift.
+The Selmer-complex formalism makes the Tate--Shafarevich correction explicit \cite{Nekovar2006}. Write
+\[
+r_p(E)=\operatorname{corank}_{\mathbb Z_p}\operatorname{Sel}_{p^\infty}(E/\mathbb Q),
+\qquad
+s_p(E)=\operatorname{corank}_{\mathbb Z_p}\Sha(E/\mathbb Q)[p^\infty].
+\]
+The standard Selmer exact sequence gives
+\[
+r_p(E)=r_{\rm MW}(E)+s_p(E).
+\]
+By the \(p\)-parity theorem, \(r_{\rm an}-r_p\) is even. Hence
+\[
+k_p(E):=\frac{r_{\rm an}(E)-r_p(E)}{2}\in\mathbb Z
+\]
+and the BSD rank defect decomposes exactly as
+\[
+\boxed{
+r_{\rm an}(E)-r_{\rm MW}(E)=2k_p(E)+s_p(E).
+}
+\]
+No sign is asserted for \(k_p\), so this identity does not separately force the two terms to vanish.
+
+The existing project-side unilateral-shift Fredholm theorem supplies an exact integer-index model, but no canonical BSD comparison map to that operator has yet been proved. It therefore cannot be used as the missing lift.
 
 The current RZDP-BSD obligation is to construct a canonical arithmetic--analytic index object \(\mathcal I_E\) and prove independently
 \[

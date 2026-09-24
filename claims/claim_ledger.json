@@ -1,5 +1,5 @@
 {
-  "schema": "rzdp.claim-ledger/v0.2",
+  "schema": "rzdp.claim-ledger/v0.3",
   "updated": "2026-09-24",
   "promotion_rule": "No QED by analogy, numerical evidence, shared notation, or structural resemblance. Every problem-specific bridge must be proved independently.",
   "claims": [
@@ -53,11 +53,21 @@
       "note": "Closes only the mod-2 shadow; it is not the BSD integer equality."
     },
     {
+      "id": "RZDP-BSD-DEC-001",
+      "title": "BSD Selmer/Sha obstruction decomposition",
+      "status": "THEOREM",
+      "statement": "For every prime p, if r_p is the p-infinity Selmer corank and s_p the p-primary Sha corank, then r_p=r_MW+s_p. Combined with p-parity, k_p=(r_an-r_p)/2 is an integer and the BSD defect satisfies r_an-r_MW=2 k_p+s_p.",
+      "dependency": [
+        "RZDP-BSD-PAR-001"
+      ],
+      "note": "Exact decomposition. No sign is asserted for k_p, so the identity does not separately force k_p=s_p=0."
+    },
+    {
       "id": "RZDP-BSD-001",
-      "title": "BSD integer-lift bridge",
+      "title": "BSD two-stage integer-lift bridge",
       "status": "OPEN_BRIDGE",
-      "statement": "Construct a canonical arithmetic-analytic index object whose analytic comparison equals the L-germ multiplicity/local length and whose arithmetic comparison equals the Mordell-Weil rank.",
-      "firewall": "Parity, Fredholm analogy, or a definition of the index by either target side is insufficient."
+      "statement": "Close the exact defect 2 k_p+s_p by an independently proved analytic-to-Selmer integer comparison and Sha-corank control, or by a single stronger comparison theorem.",
+      "firewall": "Known parity closes only k_p integrality; Selmer-to-Mordell-Weil carries an explicit Sha-corank obstruction. Neither may be silently set to zero."
     },
     {
       "id": "RZDP-YM-001",
