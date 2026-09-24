@@ -13,15 +13,7 @@ A0
     |   +-- epsilon = 0 iff crossing iso
     |
     +-- Bockstein crossing ---------------- THEOREM
-    |   +-- beta = q A'(0)|ker
-    |   +-- epsilon = ord(det)-dim H1 >= 0
-    |   +-- epsilon = 0 iff beta iso
-    |
     +-- Smith multiplicity spectrum ------- THEOREM
-    |   +-- invariant factors T^{a_i}
-    |   +-- contact depth d_i=a_i-1
-    |   +-- epsilon = sum d_i
-    |
     +-- Determinant relative valuation ---- THEOREM
     |
     +-- BSD: multiplicity/index
@@ -41,25 +33,28 @@ A0
         |   +-- A1+A2+A3 -> BSD ---------------- CONDITIONAL THEOREM
         |
         +-- Route S: p-adic Selmer
-            +-- determinant/Stark carrier ------- CONDITIONAL STANDARD CARRIER
-            +-- Selmer/Sha defect split -------- THEOREM
-            +-- D2 complex L -> zeta section --- OPEN_BRIDGE
-            +-- D3 zeta -> Selmer determinant -- OPEN_BRIDGE
-            +-- D4 contact-depth/Bockstein ------ LOCAL THEOREM; GLOBAL OPEN
+            +-- D1 determinant/Stark carrier ---- CONDITIONAL STANDARD CARRIER
+            +-- D2 complex L -> analytic/zeta --- OPEN_BRIDGE
+            +-- rho = ord(s_an/s_ar) ------------ CONDITIONAL REGISTRATION DEFECT
+            +-- D3 unit comparison rho=0 -------- OPEN_BRIDGE
+            +-- D4 contact depths d_i>=0 -------- LOCAL THEOREM; GLOBAL OPEN
             +-- D5 specialization/control ------- OPEN_BRIDGE
-            +-- D6 Sha-divisible control -------- OPEN_BRIDGE
-            +-- registered BSD defect
-                = sum_i d_i(E,p) + s_p(E) >= 0 - CONDITIONAL NORMAL FORM
+            +-- D6 Sha defect s_p>=0 ------------ OPEN_BRIDGE
+            +-- full defect
+                delta_BSD = rho + sum_i d_i + s_p
+                --------------------------------- CONDITIONAL NORMAL FORM
+            +-- after rho=0
+                delta_BSD = sum_i d_i + s_p >=0
 ```
 
-The two BSD routes are intentionally separate.
+The three Route-S defects are typed and distinct:
 
-**Route A** works directly on Mordell--Weil geometry. Once the crossing is independently identified with the Neron--Tate height map, transversality is automatic because the canonical height pairing is nondegenerate.
+- `rho` is the relative determinant-registration valuation and can have either sign until a divisibility theorem is proved;
+- `d_i` are nonnegative Smith contact depths;
+- `s_p` is the nonnegative p-primary Tate-Shafarevich corank.
 
-**Route S** works through a p-adic Selmer complex. Its specialized dimension is the Selmer corank, not automatically the Mordell--Weil rank, so the explicit Sha-divisible obstruction remains.
+Equality of analytic and arithmetic determinant ideals is exactly the unit condition `rho=0`. One-sided Iwasawa divisibilities give one-sided inequalities for `rho`; the two-divisibility strategy squeezes the same registration defect to zero.
 
-Gross--Zagier--Kolyvagin supplies a rank-one sanity check for Route A: a first L-derivative/height relation controls an arithmetic zero mode in the known simple-zero case. It does not furnish the arbitrary-rank comparison.
+Route A remains separate: it targets Mordell--Weil geometry directly and uses Neron--Tate nondegeneracy only after an independent crossing-height identification.
 
-The determinant-line carrier is standard arithmetic structure; proving the universal complex-L/zeta registration remains unresolved.
-
-The existing PNCS/Infinities Fredholm shift seam remains only an index grammar: no canonical elliptic-curve comparison map to that shift model has been proved.
+A0 controls relational zero support; it does not by itself determine determinant valuation, zero-mode jet/contact order, or hidden Selmer quotient.

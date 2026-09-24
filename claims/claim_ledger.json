@@ -1,5 +1,5 @@
 {
-  "schema": "rzdp.claim-ledger/v0.8",
+  "schema": "rzdp.claim-ledger/v0.9",
   "updated": "2026-09-24",
   "promotion_rule": "No QED by analogy, numerical evidence, shared notation, or structural resemblance. Every problem-specific bridge must be proved independently.",
   "claims": [
@@ -153,25 +153,38 @@
       "note": "Exact decomposition. No sign is asserted for k_p, so the identity does not separately force k_p=s_p=0."
     },
     {
+      "id": "RZDP-BSD-REG-001",
+      "title": "BSD three-defect registration normal form",
+      "status": "CONDITIONAL",
+      "statement": "Once analytic and arithmetic determinant sections are placed on the same rank-one carrier with ord(s_an)=r_an and ord(s_ar)=r_p+sum_i d_i, the BSD rank defect is rho_{E,p}+sum_i d_i+s_p, where rho=ord(s_an/s_ar), d_i are Smith contact depths, and s_p is the p-primary Sha corank.",
+      "dependency": [
+        "RZDP-DET-REL-001",
+        "RZDP-SNF-001",
+        "RZDP-BSD-DEC-001"
+      ],
+      "note": "D3 (comparison up to a unit) is exactly rho=0. Without a sign theorem for rho, cancellation with the two nonnegative defects is algebraically possible."
+    },
+    {
       "id": "RZDP-BSD-001",
-      "title": "BSD nonnegative two-obstruction bridge",
+      "title": "BSD three-defect closure bridge",
       "status": "OPEN_BRIDGE",
-      "statement": "After verified global registration, the BSD defect decomposes as sum_i d_i(E,p)+s_p(E), where d_i=a_i-1 are nonnegative Smith contact depths of the registered Selmer zero modes and s_p is the p-primary Sha corank. BSD rank equality is then equivalent to all d_i=0 and s_p=0.",
-      "firewall": "The nonnegative decomposition is conditional on the global analytic/determinant and specialization registrations. These cannot be inferred from the local multiplicity theorem.",
+      "statement": "Close the registration defect rho, all Smith contact depths d_i, and the Sha-corank defect s_p. Under the common-carrier registrations, delta_BSD=rho+sum_i d_i+s_p; after rho=0 this reduces to the nonnegative two-obstruction form.",
+      "firewall": "A0 fixes zero support but does not by itself fix relative determinant valuation, jet/contact order, or hidden Selmer quotient. D2/D3/D5/D6 remain genuine theorem obligations.",
       "dependency": [
         "RZDP-MIT-001",
         "RZDP-BSD-AN-001",
         "RZDP-BSD-AR-001",
         "RZDP-BSD-DEC-001",
         "RZDP-SNF-001",
-        "RZDP-BSD-CARRIER-001"
+        "RZDP-BSD-CARRIER-001",
+        "RZDP-BSD-REG-001"
       ],
       "operator_criterion": {
         "B1": "det A_E(z)=u_E(z)L(E,1+z) with u_E(0) nonzero",
         "B2": "ker A_E(0) canonically isomorphic to E(Q) tensor C",
         "B3": "crossing map ker A_E(0) -> coker A_E(0) is an isomorphism"
       },
-      "note": "Strongest current split: Route A targets Mordell-Weil directly and can use standard Neron-Tate nondegeneracy once crossing=height is independently proved. Route S retains the registered nonnegative contact-depth plus Sha-corank decomposition. The two routes are not identified.",
+      "note": "Strongest current normal form: Route S has delta_BSD=rho+sum_i d_i+s_p; Route A bypasses the Selmer/Sha split only if an independent direct Mordell-Weil operator and crossing=Neron-Tate comparison are constructed.",
       "search_gates": {
         "D1": "determinant/Selmer carrier and arithmetic Stark-system realization",
         "D2": "complex central L-germ -> zeta/determinant section",
@@ -189,7 +202,7 @@
         "selmer_padic": {
           "D1": "determinant/Selmer carrier and arithmetic Stark-system realization",
           "D2": "complex central L-germ -> zeta/determinant section",
-          "D3": "analytic section -> Selmer determinant section up to controlled unit",
+          "D3": "relative analytic/arithmetic determinant valuation rho; main-conjecture unit comparison is rho=0",
           "D4": "Smith/Bockstein contact-depth spectrum; all d_i=0 iff nondegenerate crossing",
           "D5": "specialization/control identifying H1 with Selmer corank",
           "D6": "Sha-divisible control s_p=0 or direct closure of total defect"

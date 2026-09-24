@@ -358,6 +358,29 @@ r_{\rm an}(E)-r_{\rm MW}(E)
 \]
 Hence the current RZDP normal form decomposes analytic multiplicity into Mordell--Weil modes, \(\Sha\)-modes, and higher contact depth.
 
+The remaining global registration can itself be made into an explicit defect rather than hidden inside an up-to-a-unit hypothesis. Let \(s_{\rm an}\) and \(s_{\rm ar}\) be nonzero meromorphic sections of the same determinant line and write
+\[
+s_{\rm an}=q_{E,p}\,s_{\rm ar}.
+\]
+Define
+\[
+\rho_{E,p}:=\operatorname{ord}(q_{E,p}).
+\]
+If \(\operatorname{ord}(s_{\rm an})=r_{\rm an}(E)\) and the arithmetic section has Smith/Selmer order
+\[
+\operatorname{ord}(s_{\rm ar})=r_p(E)+\sum_i d_i(E,p),
+\]
+then, without assuming that \(q_{E,p}\) is a unit,
+\[
+\boxed{
+r_{\rm an}(E)-r_{\rm MW}(E)
+=
+\rho_{E,p}+\sum_i d_i(E,p)+s_p(E).
+}
+\]
+This is the three-defect registration normal form. The main-conjecture/unit-comparison gate is precisely \(\rho_{E,p}=0\); the contact gate is \(d_i=0\) for every mode; and the hidden-arithmetic gate is \(s_p=0\). A one-sided ideal divisibility supplies a sign inequality for \(\rho\), while equality of characteristic ideals squeezes \(\rho\) to zero. Kato's Euler-system theorem gives a divisibility toward the cyclotomic Iwasawa main conjecture under its stated hypotheses \cite{Kato2004}. The separate comparison from the complex central \(L\)-germ to the relevant \(p\)-adic/zeta section remains an explicit gate.
+
+Thus A0 alone cannot determine BSD multiplicity: support of a relational zero does not fix the relative determinant valuation \(\rho\), the contact-depth spectrum \(d_i\), or the hidden Selmer quotient \(s_p\). No extra axiom is introduced; these are theorem obligations.
 \section{Yang--Mills: Spectral Isolation of Zero}
 
 A unique zero mode does not imply a positive mass gap. The target is therefore quantitative, for example a coercive spectral estimate
