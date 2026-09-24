@@ -380,6 +380,47 @@ r_{\rm an}(E)-r_{\rm MW}(E)
 \]
 This is the three-defect registration normal form. The main-conjecture/unit-comparison gate is precisely \(\rho_{E,p}=0\); the contact gate is \(d_i=0\) for every mode; and the hidden-arithmetic gate is \(s_p=0\). A one-sided ideal divisibility supplies a sign inequality for \(\rho\), while equality of characteristic ideals squeezes \(\rho\) to zero. Kato's Euler-system theorem gives a divisibility toward the cyclotomic Iwasawa main conjecture under its stated hypotheses \cite{Kato2004}. The separate comparison from the complex central \(L\)-germ to the relevant \(p\)-adic/zeta section remains an explicit gate.
 
+
+That complex-to-\(p\)-adic gate must itself be corrected for exceptional zeros. Suppose the raw \(p\)-adic section factors as
+\[
+s_p^{\rm raw}=\mathcal E_{E,p}\,s_p^{\rm corr},
+\qquad
+e_{\rm exc}(E,p):=\operatorname{ord}(\mathcal E_{E,p})\ge0.
+\]
+Define the signed corrected interpolation defect
+\[
+\eta_{E,p}:=r_{\rm an}(E)-\operatorname{ord}(s_p^{\rm corr}).
+\]
+Then
+\[
+\operatorname{ord}(s_p^{\rm raw})
+=
+e_{\rm exc}(E,p)+r_{\rm an}(E)-\eta_{E,p}.
+\]
+The exceptional contribution \(e_{\rm exc}\) is a declared local interpolation factor and is removed before comparing with rank. Combining the corrected interpolation section with the relative determinant valuation yields
+\[
+\boxed{
+r_{\rm an}(E)-r_{\rm MW}(E)
+=
+\eta_{E,p}
++
+\rho_{E,p}
++
+\sum_i d_i(E,p)
++
+s_p(E).
+}
+\]
+This is the corrected four-defect Route-S normal form. The four independent closure gates are corrected interpolation \(\eta=0\), determinant registration \(\rho=0\), simple contact \(d_i=0\), and vanishing divisible \(\Sha\)-corank \(s_p=0\).
+
+For split multiplicative reduction, the interpolation property already forces an exceptional zero of the raw \(p\)-adic \(L\)-function. Greenberg--Stevens prove the Mazur--Tate--Teitelbaum derivative formula
+\[
+L_p'(E,1)
+=
+\mathcal L_p(E)\frac{L(E,1)}{\Omega_E}
+\]
+for the modular split-multiplicative setting under their stated hypotheses \cite{GreenbergStevens1993,MTT1986}. Thus raw \(p\)-adic order cannot be identified with complex analytic rank without the local correction. More general exceptional-zero/derived-regulator phenomena are treated in modern \(p\)-adic leading-term theories \cite{BenoisBuyukboduk2023,BenoisBuyukboduk2026}.
+
 Thus A0 alone cannot determine BSD multiplicity: support of a relational zero does not fix the relative determinant valuation \(\rho\), the contact-depth spectrum \(d_i\), or the hidden Selmer quotient \(s_p\). No extra axiom is introduced; these are theorem obligations.
 \section{Yang--Mills: Spectral Isolation of Zero}
 

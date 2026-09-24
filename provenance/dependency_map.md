@@ -8,10 +8,6 @@ A0
     +-- RH: location ---------------------- CONDITIONAL ON A0
     |
     +-- Multiplicity-index transfer ------- THEOREM
-    |   +-- ord(det A) >= dim ker A
-    |   +-- excess epsilon >= 0
-    |   +-- epsilon = 0 iff crossing iso
-    |
     +-- Bockstein crossing ---------------- THEOREM
     +-- Smith multiplicity spectrum ------- THEOREM
     +-- Determinant relative valuation ---- THEOREM
@@ -27,34 +23,37 @@ A0
         |   +-- rank <= 1 derivative-height ----- THEOREM / SANITY CHECK
         |
         +-- Route A: archimedean direct
-        |   +-- A1 L-germ -> determinant family - OPEN_BRIDGE
-        |   +-- A2 kernel/coker -> MW/MW* ------- OPEN_BRIDGE
-        |   +-- A3 crossing = Neron-Tate height - OPEN_BRIDGE
-        |   +-- A1+A2+A3 -> BSD ---------------- CONDITIONAL THEOREM
+        |   +-- A1 complex L -> determinant ---- OPEN_BRIDGE
+        |   +-- A2 kernel/coker -> MW/MW* ------ OPEN_BRIDGE
+        |   +-- A3 crossing = Neron-Tate height  OPEN_BRIDGE
+        |   +-- A1+A2+A3 -> BSD --------------- CONDITIONAL THEOREM
         |
         +-- Route S: p-adic Selmer
-            +-- D1 determinant/Stark carrier ---- CONDITIONAL STANDARD CARRIER
-            +-- D2 complex L -> analytic/zeta --- OPEN_BRIDGE
-            +-- rho = ord(s_an/s_ar) ------------ CONDITIONAL REGISTRATION DEFECT
-            +-- D3 unit comparison rho=0 -------- OPEN_BRIDGE
-            +-- D4 contact depths d_i>=0 -------- LOCAL THEOREM; GLOBAL OPEN
-            +-- D5 specialization/control ------- OPEN_BRIDGE
-            +-- D6 Sha defect s_p>=0 ------------ OPEN_BRIDGE
-            +-- full defect
-                delta_BSD = rho + sum_i d_i + s_p
-                --------------------------------- CONDITIONAL NORMAL FORM
-            +-- after rho=0
-                delta_BSD = sum_i d_i + s_p >=0
+            +-- D1 determinant/Stark carrier --- CONDITIONAL STANDARD CARRIER
+            +-- D2a exceptional factor --------- LOCAL / SETTING DEPENDENT
+            |   +-- raw section = E_exc*corr
+            |   +-- e_exc = ord(E_exc) >= 0
+            +-- D2b corrected interpolation ---- OPEN_BRIDGE
+            |   +-- eta = r_an - ord(s_corr)
+            |   +-- target eta=0
+            +-- D3 determinant registration ---- OPEN_BRIDGE
+            |   +-- rho=ord(s_corr/s_ar)
+            |   +-- target rho=0
+            +-- D4 contact depths d_i>=0 ------- LOCAL THEOREM; GLOBAL OPEN
+            +-- D5 specialization/control ------ OPEN_BRIDGE
+            +-- D6 Sha defect s_p>=0 ----------- OPEN_BRIDGE
+            |
+            +-- corrected full defect
+                delta_BSD = eta + rho + sum_i d_i + s_p
+                -------------------------------- CONDITIONAL NORMAL FORM
 ```
 
-The three Route-S defects are typed and distinct:
+Exceptional/trivial zeros are not counted as Mordell--Weil rank. They are removed at D2a before the corrected interpolation defect `eta` is defined.
 
-- `rho` is the relative determinant-registration valuation and can have either sign until a divisibility theorem is proved;
-- `d_i` are nonnegative Smith contact depths;
-- `s_p` is the nonnegative p-primary Tate-Shafarevich corank.
+`eta` measures complex-to-corrected-p-adic order mismatch; `rho` measures corrected-p-adic-to-arithmetic determinant mismatch; `d_i` measure higher zero-mode contact; `s_p` measures hidden p-primary Sha corank.
 
-Equality of analytic and arithmetic determinant ideals is exactly the unit condition `rho=0`. One-sided Iwasawa divisibilities give one-sided inequalities for `rho`; the two-divisibility strategy squeezes the same registration defect to zero.
+The split-multiplicative Mazur--Tate--Teitelbaum / Greenberg--Stevens theorem is the canonical sanity check that raw p-adic vanishing can contain a local interpolation zero.
 
-Route A remains separate: it targets Mordell--Weil geometry directly and uses Neron--Tate nondegeneracy only after an independent crossing-height identification.
+Kato's Euler-system divisibility attacks the p-adic analytic-to-Selmer comparison layer, not by itself the complex-to-p-adic corrected interpolation layer.
 
-A0 controls relational zero support; it does not by itself determine determinant valuation, zero-mode jet/contact order, or hidden Selmer quotient.
+A0 controls relational zero support. It does not determine interpolation order, determinant valuation, jet/contact depth, or hidden Selmer quotient.

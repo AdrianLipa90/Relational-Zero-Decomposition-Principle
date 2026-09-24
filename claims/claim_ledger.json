@@ -1,5 +1,5 @@
 {
-  "schema": "rzdp.claim-ledger/v0.9",
+  "schema": "rzdp.claim-ledger/v0.10",
   "updated": "2026-09-24",
   "promotion_rule": "No QED by analogy, numerical evidence, shared notation, or structural resemblance. Every problem-specific bridge must be proved independently.",
   "claims": [
@@ -153,6 +153,36 @@
       "note": "Exact decomposition. No sign is asserted for k_p, so the identity does not separately force k_p=s_p=0."
     },
     {
+      "id": "RZDP-BSD-EZ-001",
+      "title": "Exceptional-factor valuation split",
+      "status": "THEOREM",
+      "statement": "Whenever a raw p-adic analytic section factors as s_raw=E_exc s_corr, valuation additivity gives ord(s_raw)=ord(E_exc)+ord(s_corr). The explicit exceptional-factor order is tracked separately from the corrected analytic order.",
+      "dependency": [],
+      "note": "Exact local valuation algebra; existence and choice of the declared exceptional factor are setting-dependent."
+    },
+    {
+      "id": "RZDP-BSD-MTT-001",
+      "title": "Split-multiplicative exceptional-zero sanity check",
+      "status": "THEOREM",
+      "statement": "For a modular elliptic curve with split multiplicative reduction at p, the p-adic interpolation property forces L_p(E,1)=0, and Greenberg-Stevens prove the Mazur-Tate-Teitelbaum first-derivative formula under their stated hypotheses.",
+      "dependency": [],
+      "source": "Mazur-Tate-Teitelbaum, Invent. Math. 84 (1986); Greenberg-Stevens, Invent. Math. 111 (1993).",
+      "note": "Demonstrates that raw p-adic zero order can contain a local interpolation zero unrelated to complex analytic rank."
+    },
+    {
+      "id": "RZDP-BSD-INT-001",
+      "title": "Corrected four-defect interpolation normal form",
+      "status": "CONDITIONAL",
+      "statement": "After removing a declared exceptional interpolation factor, define eta=r_an-ord(s_p^corr). If rho=ord(s_p^corr/s_ar), the arithmetic determinant has order r_p+sum_i d_i, and r_p=r_MW+s_p, then delta_BSD=eta+rho+sum_i d_i+s_p.",
+      "dependency": [
+        "RZDP-BSD-EZ-001",
+        "RZDP-BSD-REG-001",
+        "RZDP-SNF-001",
+        "RZDP-BSD-DEC-001"
+      ],
+      "note": "eta and rho are signed until independent interpolation/divisibility theorems are proved; d_i and s_p are nonnegative."
+    },
+    {
       "id": "RZDP-BSD-REG-001",
       "title": "BSD three-defect registration normal form",
       "status": "CONDITIONAL",
@@ -166,10 +196,10 @@
     },
     {
       "id": "RZDP-BSD-001",
-      "title": "BSD three-defect closure bridge",
+      "title": "BSD corrected four-defect closure bridge",
       "status": "OPEN_BRIDGE",
-      "statement": "Close the registration defect rho, all Smith contact depths d_i, and the Sha-corank defect s_p. Under the common-carrier registrations, delta_BSD=rho+sum_i d_i+s_p; after rho=0 this reduces to the nonnegative two-obstruction form.",
-      "firewall": "A0 fixes zero support but does not by itself fix relative determinant valuation, jet/contact order, or hidden Selmer quotient. D2/D3/D5/D6 remain genuine theorem obligations.",
+      "statement": "After exceptional-factor normalization, close eta_{E,p}, rho_{E,p}, all Smith contact depths d_i, and Sha-corank s_p. Under the stated registrations, delta_BSD=eta+rho+sum_i d_i+s_p.",
+      "firewall": "Raw p-adic vanishing order may contain exceptional/trivial zeros. Those local interpolation factors must be removed before defining eta. A0 does not fix eta, rho, d_i, or s_p.",
       "dependency": [
         "RZDP-MIT-001",
         "RZDP-BSD-AN-001",
@@ -177,21 +207,25 @@
         "RZDP-BSD-DEC-001",
         "RZDP-SNF-001",
         "RZDP-BSD-CARRIER-001",
-        "RZDP-BSD-REG-001"
+        "RZDP-BSD-REG-001",
+        "RZDP-BSD-INT-001",
+        "RZDP-BSD-EZ-001"
       ],
       "operator_criterion": {
         "B1": "det A_E(z)=u_E(z)L(E,1+z) with u_E(0) nonzero",
         "B2": "ker A_E(0) canonically isomorphic to E(Q) tensor C",
         "B3": "crossing map ker A_E(0) -> coker A_E(0) is an isomorphism"
       },
-      "note": "Strongest current normal form: Route S has delta_BSD=rho+sum_i d_i+s_p; Route A bypasses the Selmer/Sha split only if an independent direct Mordell-Weil operator and crossing=Neron-Tate comparison are constructed.",
+      "note": "Strongest Route-S normal form: delta_BSD=eta+rho+sum_i d_i+s_p after declared exceptional-factor normalization. Route A remains a separate direct Mordell-Weil/Neron-Tate route.",
       "search_gates": {
         "D1": "determinant/Selmer carrier and arithmetic Stark-system realization",
         "D2": "complex central L-germ -> zeta/determinant section",
-        "D3": "analytic section -> Selmer determinant section up to controlled unit",
+        "D3": "prove corrected p-adic analytic to Selmer determinant unit comparison rho=0",
         "D4": "Bockstein excess epsilon>=0; epsilon=0 iff nondegenerate crossing",
         "D5": "specialization/control identifying H1 with Selmer corank",
-        "D6": "Sha-divisible control s_p=0 or a direct proof that total defect vanishes"
+        "D6": "Sha-divisible control s_p=0 or a direct proof that total defect vanishes",
+        "D2a": "identify and remove declared local exceptional/trivial-zero interpolation factors",
+        "D2b": "prove corrected complex-L to p-adic analytic order registration eta=0"
       },
       "routes": {
         "archimedean_direct": {
@@ -202,10 +236,12 @@
         "selmer_padic": {
           "D1": "determinant/Selmer carrier and arithmetic Stark-system realization",
           "D2": "complex central L-germ -> zeta/determinant section",
-          "D3": "relative analytic/arithmetic determinant valuation rho; main-conjecture unit comparison is rho=0",
+          "D3": "relative corrected-analytic/arithmetic determinant valuation rho; target rho=0",
           "D4": "Smith/Bockstein contact-depth spectrum; all d_i=0 iff nondegenerate crossing",
           "D5": "specialization/control identifying H1 with Selmer corank",
-          "D6": "Sha-divisible control s_p=0 or direct closure of total defect"
+          "D6": "Sha-divisible control s_p=0 or direct closure of total defect",
+          "D2a": "local exceptional-factor normalization e_exc",
+          "D2b": "corrected interpolation defect eta; target eta=0"
         }
       }
     },
