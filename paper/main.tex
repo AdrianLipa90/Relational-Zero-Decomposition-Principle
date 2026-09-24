@@ -67,19 +67,74 @@ The exact logical status carried into this repository is
 
 \section{Birch--Swinnerton-Dyer: Multiplicity and Index}
 
-The target identity is
+For an elliptic curve \(E/\mathbb Q\), write
 \[
-\operatorname{ord}_{s=1}L(E,s)=\operatorname{rank}E(\mathbb Q).
+r_{\rm an}(E)=\operatorname{ord}_{s=1}L(E,s),
+\qquad
+r_{\rm MW}(E)=\operatorname{rank}_{\mathbb Z}E(\mathbb Q).
 \]
+The Clay rank statement is \(r_{\rm an}(E)=r_{\rm MW}(E)\) \cite{WilesBSD2000}.
 
-For a sufficiently small positively oriented contour \(\gamma\) around \(s=1\),
+Set \(L_E(z)=L(E,1+z)\). If \(r=r_{\rm an}(E)\), then locally
 \[
-\operatorname{ord}_{s=1}L(E,s)
+L_E(z)=z^r u(z),\qquad u(0)\ne0.
+\]
+Hence, for sufficiently small \(\varepsilon>0\),
+\[
+\boxed{
+r_{\rm an}(E)
 =
-\frac{1}{2\pi i}\oint_\gamma \frac{L'(E,s)}{L(E,s)}\,ds.
+\frac{1}{2\pi i}\oint_{|z|=\varepsilon}\frac{L'_E(z)}{L_E(z)}\,dz
+=
+\operatorname{length}_{\mathbb C\{z\}}
+\frac{\mathbb C\{z\}}{(L_E)}.
+}
+\]
+Thus analytic rank is simultaneously a winding number and a local-algebra length.
+
+On the arithmetic side let
+\[
+V_E=E(\mathbb Q)\otimes_{\mathbb Z}\mathbb Q.
+\]
+By Mordell--Weil,
+\[
+\boxed{
+r_{\rm MW}(E)
+=
+\dim_{\mathbb Q}V_E
+=
+\max\{k:\Lambda^kV_E\ne0\}.
+}
 \]
 
-The open bridge is the identification of this analytic winding/index with a canonical arithmetic index equal to the Mordell--Weil rank, without importing BSD-equivalent content.
+Therefore the BSD rank statement is exactly the equality of two independently defined integer indices:
+\[
+\boxed{
+\operatorname{length}_{\mathbb C\{z\}}
+\frac{\mathbb C\{z\}}{(L_E)}
+=
+\max\{k:\Lambda^k(E(\mathbb Q)\otimes\mathbb Q)\ne0\}.
+}
+\]
+
+A known theorem closes the parity shadow of this bridge: for every prime \(p\), the analytic rank and the \(p^\infty\)-Selmer rank have the same parity over \(\mathbb Q\) \cite{DokchitserDokchitser2010}. The full integer lift remains open.
+
+The Selmer-complex formalism makes the Tate--Shafarevich correction explicit \cite{Nekovar2006}. The existing project-side unilateral-shift Fredholm theorem supplies an exact integer-index model, but no canonical BSD comparison map to that operator has yet been proved. It therefore cannot be used as the missing lift.
+
+The current RZDP-BSD obligation is to construct a canonical arithmetic--analytic index object \(\mathcal I_E\) and prove independently
+\[
+\mathcal I_E
+=
+\operatorname{length}_{\mathbb C\{z\}}
+\frac{\mathbb C\{z\}}{(L_E)}
+\]
+and
+\[
+\mathcal I_E
+=
+\dim_{\mathbb Q}(E(\mathbb Q)\otimes\mathbb Q).
+\]
+Only then does the BSD branch promote to Q.E.D.
 
 \section{Yang--Mills: Spectral Isolation of Zero}
 

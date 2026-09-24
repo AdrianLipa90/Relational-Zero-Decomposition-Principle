@@ -1,5 +1,5 @@
 {
-  "schema": "rzdp.claim-ledger/v0.1",
+  "schema": "rzdp.claim-ledger/v0.2",
   "updated": "2026-09-24",
   "promotion_rule": "No QED by analogy, numerical evidence, shared notation, or structural resemblance. Every problem-specific bridge must be proved independently.",
   "claims": [
@@ -22,15 +22,42 @@
       "title": "RH from A0",
       "status": "CONDITIONAL",
       "statement": "A0 implies that every non-trivial zero of the completed zeta function lies on Re(s)=1/2.",
-      "dependency": ["RZDP-A0"],
+      "dependency": [
+        "RZDP-A0"
+      ],
       "source_status": "Worked reference case with three complementary proof certificates."
     },
     {
+      "id": "RZDP-BSD-AN-001",
+      "title": "BSD analytic index triad",
+      "status": "THEOREM",
+      "statement": "For L_E(z)=L(E,1+z), ord_0(L_E) equals both the winding number of L_E around zero on a sufficiently small contour and the local-algebra length of C{z}/(L_E).",
+      "dependency": [],
+      "note": "Standard argument principle plus local factorization L_E(z)=z^r u(z), u(0) != 0."
+    },
+    {
+      "id": "RZDP-BSD-AR-001",
+      "title": "BSD arithmetic exterior-degree index",
+      "status": "THEOREM",
+      "statement": "rank_Z E(Q) equals dim_Q(E(Q) tensor Q), which equals the largest k with exterior power Lambda^k(E(Q) tensor Q) nonzero.",
+      "dependency": [],
+      "note": "Mordell-Weil finite generation plus finite-dimensional linear algebra."
+    },
+    {
+      "id": "RZDP-BSD-PAR-001",
+      "title": "BSD analytic/Selmer parity seam",
+      "status": "THEOREM",
+      "statement": "For elliptic curves over Q, the analytic rank and p-infinity Selmer rank have the same parity for every prime p.",
+      "dependency": [],
+      "source": "Dokchitser-Dokchitser, Annals of Mathematics 172 (2010).",
+      "note": "Closes only the mod-2 shadow; it is not the BSD integer equality."
+    },
+    {
       "id": "RZDP-BSD-001",
-      "title": "BSD multiplicity/index bridge",
+      "title": "BSD integer-lift bridge",
       "status": "OPEN_BRIDGE",
-      "statement": "Identify the analytic order/winding of L(E,s) at s=1 with a canonical arithmetic index equal to rank E(Q).",
-      "firewall": "The bridge must not assume BSD-equivalent content."
+      "statement": "Construct a canonical arithmetic-analytic index object whose analytic comparison equals the L-germ multiplicity/local length and whose arithmetic comparison equals the Mordell-Weil rank.",
+      "firewall": "Parity, Fredholm analogy, or a definition of the index by either target side is insufficient."
     },
     {
       "id": "RZDP-YM-001",
