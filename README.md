@@ -20,6 +20,7 @@ The Riemann Hypothesis is the first worked reference case. Its exact carried sta
 
 Every mathematical claim must be tagged as one of:
 
+- FOUNDATIONAL_AXIOM
 - THEOREM
 - CONDITIONAL
 - REDUCTION

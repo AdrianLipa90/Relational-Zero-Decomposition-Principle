@@ -1,0 +1,82 @@
+{
+  "schema": "rzdp.exact-head-audit/v1",
+  "date": "2026-09-28",
+  "repository": "AdrianLipa90/Relational-Zero-Decomposition-Principle",
+  "frozen_main": "274980628737e0bf58cc704814cd5999056a279c",
+  "frozen_tree": "6084a6f2119948eb53acd96b02a39b0b5110887c",
+  "source_parent": "bb003a5f1c42a6f009690ad6c235c5842c389abc",
+  "head_delta": {
+    "only_added_file": "RZDP_MONOGRAPH_V1_0.md",
+    "blob_sha": "cef03fc2db56d954aeb1769fb7a03d2b0198227e"
+  },
+  "branch_closure": {
+    "branch": "feat/rzdp-initial-skeleton-20260924",
+    "tip": "7953003448bf7c7dfa771afc95cb9cc25ee5665d",
+    "ahead_by": 0,
+    "behind_by": 2,
+    "unique_payload_outside_main": false
+  },
+  "claim_ledger": {
+    "blob_sha": "8a098e189d67275eb65e3be92540813f5d175e77",
+    "schema": "rzdp.claim-ledger/v0.10",
+    "claims": 25,
+    "dependency_edges": 26,
+    "duplicate_ids": 0,
+    "missing_dependency_targets": 0,
+    "dependency_cycles": 0,
+    "status_counts": {
+      "FOUNDATIONAL_AXIOM": 1,
+      "THEOREM": 12,
+      "CONDITIONAL": 6,
+      "OPEN_BRIDGE": 5,
+      "REDUCTION": 1
+    }
+  },
+  "publication_sources": {
+    "paper_main_tex_blob": "a3d039f99493f6c1d7208f3320bdf136c5cf1fef",
+    "bibliography_blob": "c397da212436f40ef5ab56a6019a0d7d458502da",
+    "used_unique_citation_keys": 14,
+    "missing_citation_keys": 0,
+    "unused_bibliography_keys": [
+      "Riemann1859",
+      "Shannon1948",
+      "KullbackLeibler1951",
+      "MazurRubin2016"
+    ]
+  },
+  "build_evidence": {
+    "fresh_local_compile_this_session": false,
+    "prior_exact_local_build_recorded_at_source_parent": true,
+    "carried_forward_by_git_blob_identity": true,
+    "reason": "Frozen main changes only by adding RZDP_MONOGRAPH_V1_0.md; paper/main.tex and paper/bibliography.bib retain the audited blob SHAs."
+  },
+  "live_runtime": {
+    "tether_status": "ACTIVE",
+    "tether_failures": [],
+    "noema_startpoint_packet_sha256": "06208771ed29b2fc6942f3597f01fe2853f5ac893e0b12b5da92febff7e90a93",
+    "gremlin_status": "ACTIVE",
+    "gremlin_generation": "1fba95d164ee0876580190e43577ef5cae5fec90bbc36b89c39f9b685bae03e5",
+    "gremlin_user_task_event_id": "gremlin:whisper:sha256:473263e9aae54ceb42ec7750b07dfbc9cf892fe8139b46a0ce7a76384e7e98cb",
+    "terminal36d_receipt_sha256": "a9a49aab2ae5d9697d40eb11aef2aa9163b10336e161e82705ef5a0535a8b6dd",
+    "gremlin_internal_audit_candidate_event_id": "gremlin:whisper:sha256:23f6e02d14c7c1eee1aff37010a6baaaaf1cd21dc06a3c1a5972a3ba5380dd12",
+    "route_species": [
+      "OWL",
+      "SPIDER"
+    ],
+    "authority": "CANDIDATE_ONLY",
+    "static_fallback": false
+  },
+  "findings": [
+    {
+      "severity": "DOC_ONLY",
+      "finding": "README proof-status enumeration omitted FOUNDATIONAL_AXIOM although the claim ledger uses it.",
+      "action": "Corrected on this audit branch."
+    },
+    {
+      "severity": "INFO",
+      "finding": "The monograph commit audits its parent source state and is itself the only delta on frozen main.",
+      "action": "This receipt binds the current frozen main explicitly."
+    }
+  ],
+  "main_mutated": false
+}
